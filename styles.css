@@ -1,3 +1,56 @@
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: auto;
+	background: rgba(30, 30, 30, 0.85);
+	animation: fadeInBg 0.3s;
+}
+
+.modal-content {
+	background: #18191a;
+	margin: 60px auto;
+	padding: 32px 24px 24px 24px;
+	border-radius: 16px;
+	max-width: 400px;
+	box-shadow: 0 8px 32px rgba(0,0,0,0.32);
+	color: #e0e0e0;
+	position: relative;
+	animation: popIn 0.4s;
+}
+
+.close {
+	position: absolute;
+	top: 16px;
+	right: 18px;
+	font-size: 1.8em;
+	color: #f76b1c;
+	cursor: pointer;
+	font-weight: bold;
+	transition: color 0.2s;
+}
+.close:hover {
+	color: #fff;
+}
+
+@keyframes popIn {
+	0% { transform: scale(0.7); opacity: 0; }
+	80% { transform: scale(1.05); opacity: 1; }
+	100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInBg {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+.animate-modal {
+	animation: popIn 0.4s;
+}
 .delivery-warning {
 	background: #232526;
 	border-left: 5px solid #f76b1c;
@@ -12,7 +65,6 @@
 .delivery-warning span {
 	color: #fff;
 	background: #f76b1c;
-	padding: 2px 8px;
 	border-radius: 4px;
 	font-weight: bold;
 }
@@ -100,7 +152,8 @@ button:hover {
 	box-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 
-.quote-detail a {
+.quote-detail a,
+.modal-content a {
 	color: #f76b1c !important;
 	text-decoration: underline;
 	font-weight: 500;
@@ -110,7 +163,8 @@ button:hover {
 	padding: 0;
 	border-radius: 0;
 }
-.quote-detail a:hover {
+.quote-detail a:hover,
+.modal-content a:hover {
 	color: #fff !important;
 	background: none;
 	border: none;
